@@ -305,7 +305,7 @@ body {
 }
 
 .close-filters {
-  position: absolute; /* Corregido de 'aún absolute' */
+  position: absolute; 
   top: 15px;
   right: 15px;
   background: none;
@@ -511,7 +511,7 @@ body.light-mode .modal-header-product h2 {
 /* --------------------------------- Contenedor de Productos --------------------------------- */
 .products-container {
   flex: 1;
-  padding: 50px;
+  padding: 45px;
   margin-left: 230px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -521,22 +521,75 @@ body.light-mode .modal-header-product h2 {
 
 .category-label-row {
   grid-column: 1 / -1; /* Ocupa toda la fila */
-  padding: 10px 0;
-  margin-bottom: 5px;
+  padding: 5px 0;
 }
 
 .category-label {
-  padding: 5px 10px;
-  margin-right: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border-radius: 15px;
-  font-size: 12px;
+  display: inline-block;
+  padding: 8px 18px;
+  margin-right: 12px;
+  font-size: 13px;
   font-weight: bold;
+  color: #5c3b1e;
+  background: #dcd5c4; /* estilo papel kraft claro */
+  border: 2px solid #715434;
+  border-radius: 5px 15px 15px 5px; /* forma de etiqueta horizontal */
+  position: relative;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3), 0 2px 5px rgba(0,0,0,0.1);
+  font-family: 'Georgia', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease; /* Asegura transición suave */
+  transform-origin: left center; /* Punto de giro en el lado izquierdo */
 }
 
+/* Simula el agujero de etiqueta */
+.category-label::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border: 1px solid #a07648;
+  border-radius: 50%;
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto hover con giro hacia arriba */
+.category-label:hover {
+  transform: rotate(-3deg) translateY(-2px); /* Giro de 3 grados hacia arriba */
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  background: linear-gradient(to bottom, #f8e9c0, #ecdaac);
+}
+
+/* Contenedor de categorías - estilo estantería */
+.category-label-row {
+  margin: 18px 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0d5c0;
+  position: relative;
+}
+
+/* Efecto de luz en estantería */
+.category-label-row::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, 
+              transparent, 
+              rgba(255,255,255,0.7), 
+              transparent);
+}
+
+
 .product-card {
-  border: 1px solid #ddd;
+  border: 1px solid #6b6b6b;
   border-radius: 5px;
   overflow: hidden;
   position: relative;
@@ -794,7 +847,6 @@ body.light-mode .modal-header-product h2 {
   margin: 0;
   font-weight: 600;
   letter-spacing: 0.5px;
-  padding-left: 35rem;
 }
 
 .close-modal {
@@ -973,14 +1025,14 @@ body.light-mode .modal-header-product h2 {
 .cart-total {
   display: flex;
   justify-content: right;
-  gap: 15px;
+  gap: 2px;
   align-items: center;
   margin-bottom: 15px;
 }
 
 .cart-total-label {
-  font-size: 16px;
-  color: #666;
+  font-size: 20px;
+  color: #333;
   font-weight: 700;
 }
 
@@ -1032,53 +1084,9 @@ body.light-mode .modal-header-product h2 {
   opacity: 1;
 }
 
+
+
 /* ----------------------------------- fin MODAL DEL CARRITO ---------------------------- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* --------------------------------------- modal de productos --------------------------------------- */
 .modalproduct {
